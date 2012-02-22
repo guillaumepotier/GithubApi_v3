@@ -49,6 +49,11 @@ class Api {
         return $this->get('/repos/'.urlencode($user).'/'.urlencode($repo).'/issues/'.urlencode($number));
     }
 
+    public function getCommits($user, $repo, $params = array())
+    {
+        return $this->get('/repos/'.urlencode($user).'/'.urlencode($repo).'/commits', $params);
+    }
+
     public function login($username, $password)
     {
         $this->username = $username;
